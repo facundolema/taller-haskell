@@ -4,9 +4,27 @@ module Clase1 where
     absoluto :: Integral a => a -> a
     absoluto x = if x < 0 then -x else x
 
+    -- Valor absoluto de un número entero (guards)
+    absoluto' :: Integral a => a -> a
+    absoluto' x | x < 0 = -x
+                | otherwise = x
+ 
+    {-- Para maximoabsoluto uso where para evitar calcular 
+        absoluto del mismo número dos veces. No es necesario,
+        pero ahorra tiempo (es una computación menos para hacer).
+        En una sola vuelta, la diferencia es insignificante,
+        pero si mapean la función sobre una lista larga, se nota --}
+
     -- Máximo entre el valor absoluto de dos números enteros
     maximoabsoluto :: Integral a => a -> a -> a
-    maximoabsoluto x y = if absoluto x >= absoluto y then absoluto x else absoluto y
+    maximoabsoluto x y = if a >= b then a else b where a = absoluto x; b = absoluto y
+
+    -- Máximo entre el valor absoluto de dos números enteros (guards)
+    maximoabsoluto' :: Integral a => a -> a -> a
+    maximoabsoluto' x y | a >= b = a
+                        | otherwise = b
+                        where a = absoluto x
+                              b = absoluto y
 
     -- Máximo entre tres números enteros
     maximo3 :: Integral a => a -> a -> a -> a
