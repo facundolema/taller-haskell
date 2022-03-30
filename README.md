@@ -13,4 +13,6 @@
 
 ```
 git clone https://github.com/FacundoLema/taller-haskell.git
+cd taller-haskell
+rm -f clase1.hs
 ```
