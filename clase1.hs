@@ -8,12 +8,12 @@ module Clase1 where
     absoluto' :: Integral a => a -> a
     absoluto' x | x < 0 = -x
                 | otherwise = x
- 
+
     {-- Para maximoabsoluto uso where para evitar calcular 
-        absoluto del mismo número dos veces. No es necesario,
-        pero ahorra tiempo (es una computación menos para hacer).
-        En una sola vuelta, la diferencia es insignificante,
-        pero si mapean la función sobre una lista larga, se nota --}
+    absoluto del mismo número dos veces. No es necesario,
+    pero ahorra tiempo (es una computación menos para hacer).
+    En una sola vuelta, la diferencia es insignificante,
+    pero si mapean la función sobre una lista larga, se nota --}
 
     -- Máximo entre el valor absoluto de dos números enteros
     maximoabsoluto :: Integral a => a -> a -> a
