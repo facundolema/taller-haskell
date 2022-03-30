@@ -12,7 +12,7 @@ $PSDefaultParameterValues['*:Encoding'] = 'utf8'
 if ($help) {
     Write-Host "
     $([char]27)[0;30;103m Test de funciones del Taller de Haskell para Algebra I $([char]27)[0m
-    
+
     Uso: .\tester.ps1 -archivo archivo.hs -clase n [-module | -m]
 
     $([char]27)[4;93mArgumentos$([Char]27)[0;93m:$([Char]27)[0m tester.ps1 toma dos argumentos obligatorios, -archivo (-a) y 
@@ -69,3 +69,5 @@ ghc --make tmp.hs
 # Clean-up
 Remove-Item -force tmp.hs, tmp.o, tmp.hi, tmp.exe
 if ($module) {Remove-Item -force clase1.o, clase1.hi}
+
+Read-Host "Presiona cualquier tecla para terminar"
