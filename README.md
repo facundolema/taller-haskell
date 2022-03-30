@@ -11,8 +11,12 @@
 
 ### Como lo descargo? ###
 
+**GIT**
 ```
 git clone https://github.com/FacundoLema/taller-haskell.git
 cd taller-haskell
 rm clase1.hs
 ```
+**Como zip desde el repositorio**
+![Click en el botón verde "Code"](img/github-help.png)
+![Click en "Download ZIP"](img/github-help2.png)
