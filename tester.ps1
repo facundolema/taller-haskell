@@ -7,6 +7,12 @@ param ( [Parameter()] [String]$archivo,
 $PSDefaultParameterValues['Out-File:Encoding'] = 'utf8'
 $PSDefaultParameterValues['*:Encoding'] = 'utf8'
 
+function Run {
+    param ([Parameter()] [Switch]$m)
+    ghc --make tmp.hs; .\tmp.exe;
+    if ($m) {Remove-Item -Force *.o, *.hi}
+    Remove-Item -Force tmp*}
+
 [Console]::OutputEncoding = [Text.UTF8Encoding]::UTF8
 
 if ($help) {
@@ -53,21 +59,17 @@ if (!$clase) {$clase = Read-Host "Numero de clase contra la cual comparar";}
 # Reconstruye el nombre del test a partir de la clase
 [String]$clase = "clase" + $clase + "-test.hs"
 
+<#  Si alguien tiene otra forma (mejor) que no sea if ($?) {...} else {...}
+    para chequear si la funcion anterior fue exitosa y ejecutar la siguiente
+    en consecuencia, es bienvenido   #>
+
 if ($module) {
-    # El nombre del módulo es el mismo que el del archivo sin la extensión (.hs)
-    $moduleName = $archivo.Substring(0, $archivo.Length - 3)
-    # Pone la primera letra del módulo en mayuscula y lo importa
-    "import " + (Get-Culture).TextInfo.ToTitleCase($moduleName) > tmp.hs;
-    # Incluye el test correspondiente
-    Get-Content $clase >> tmp.hs}
-else {Copy-Item $archivo -destination "tmp.hs"; Get-Content $clase >> tmp.hs}
+    "import " + (Get-Culture).TextInfo.ToTitleCase($archivo.Replace(".hs", "")) > tmp.hs
+    if ($?) {Get-Content $clase >> tmp.hs} else {Write-Host "E01: Algo salio mal" -n; Read-Host; exit 1}
+    if ($?) {Run -m} else {Write-Host "E02: Algo salio mal" -n}; Read-Host; exit 2}
 
-# Compila y ejecuta tmp.hs
-ghc --make tmp.hs
-.\tmp.exe
-
-# Clean-up
-Remove-Item -force tmp.hs, tmp.o, tmp.hi, tmp.exe
-if ($module) {Remove-Item -force clase1.o, clase1.hi}
+Copy-Item $archivo -destination "tmp.hs"
+if ($?) {Get-Content $clase >> tmp.hs} else {Write-Host "E03: Algo salio mal" -n; Read-Host; exit 3}
+if ($?) {Run} else {Write-Host "E04: Algo salio mal" -n; Read-Host; exit 4}
 
 Read-Host "Presiona cualquier tecla para terminar"
