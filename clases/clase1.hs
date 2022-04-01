@@ -28,7 +28,7 @@ module Clase1 where
 
     -- Máximo entre tres números enteros
     maximo3 :: Integral a => a -> a -> a -> a
-    maximo3 x y z | x >= y && y >= z = x
+    maximo3 x y z | x >= y && x >= z = x
                   | y > z = y
                   | otherwise = z
 
