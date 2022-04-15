@@ -70,23 +70,6 @@ module Clase4 where
           | mod n 10 == div (mod n 100) 10 = g4a (div n 10)
           | otherwise = False
 
-    {-- alternativas para algunas que se pueden definir usando funciones ya definidas
-        pero que son menos eficientes porque tienen que calcular otras sumatorias y
-        restarlas. También se puede crear una master f0 que sea bien customizable 
-        (por ejemplo, f(n, m, b, e)) y definir todas las demas usando esa --}
-
-    -- f1 es un caso especial de f2
-    f1_ :: (Integral a, Real b) => a -> b
-    f1_ n = f2 n 2 + 1
-
-    -- f4 es f3 - f2
-    f4_ :: (Integral a, Real b) => a -> b -> b
-    f4_ n q = f3 n q - f2 n q
-
-    -- f6 es f2 desde n hasta n+m (f2 a n+m - f2 a n)
-    f6_ q 0 m = 0
-    f6_ q n m = f2 (n+m) q - f2 n q + f6_ q (n-1) m
-
     {-- one-liners --}
 
     sumatoria' :: Integral a => a -> a
@@ -98,6 +81,7 @@ module Clase4 where
     eAprox' :: Integer -> Float
     eAprox' n = if n == 0 then 1 else (1/fromIntegral(factorial n)) + eAprox' (n-1)
 
+    -- f1 es un caso especial de f2
     f1' :: (Integral a, Real b) => a -> b
     f1' n = f2' n 2 + 1
 
@@ -106,7 +90,8 @@ module Clase4 where
 
     f3' :: (Integral a, Real b) => a -> b -> b
     f3' n q = if n == 0 then 0 else q^(2*n) + q^(2*n-1) + f3' (n-1) q
-
+    
+    -- f4 es f3 - f2
     f4' :: (Integral a, Real b) => a -> b -> b
     f4' n q = f3' n q - f2' n q
 
@@ -116,6 +101,10 @@ module Clase4 where
     -- if, fixed point, lambda y recursion. https://bit.ly/3rry0ZL
     f6' :: Integral a => a -> a -> a -> a
     f6' q n m = if n==0 then 0 else fix (\f q n m -> if n==m then q^n else q^m + f q n (m-1)) q (n+1) (n+m) + f6' q (n-1) m
+
+    -- f6 como f2 desde n hasta n+m (f2 a n+m - f2 a n)
+    f6' :: Integral a => a -> a -> a -> a
+    f6'' q n m = if n==0 then 0 else f2 (n+m) q - f2 n q + f6'' q (n-1) m
 
     f7' :: (Eq a, Enum a, Fractional a) => a -> a -> a
     f7' n m = if m==0 then 0 else sum (map (\x -> x/m) [1..n]) + f7' n (m-1) 
