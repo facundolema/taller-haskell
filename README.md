@@ -22,16 +22,22 @@ rm -r img
 
 - Abrí la terminal y navegá a *taller-algebra*. Si usas Windows, usa **PowerShell**.
 
-**Tester** *(tester.ps1)* toma dos argumentos, ***-archivo*** y ***-clase***. Adicionalmente, se puede especificaruna flag: ***-module***
-- ***-archivo*** corresponde al nombre del archivo de Haskell que copiaste y pegaste en la carpeta, incluida su extensión (.hs). 
-- ***-clase*** corresponde al número de la clase a la cual corresponden los ejercicios. Solo acepta números (int).*
-- ***-module***, ***-m*** es una flag obligatoria si las funciones estan definidas dentro de un módulo (es decir, si al comienzo de tu archivo escribiste *module ModuleName where*). Es importanteque el nombre del módulo comience con mayúscula (requisito de Haskell) y que el nombre del módulo sea exactamente igual al nombre del archivo.
+**Tester** *(tanto tester.ps1 como tester.sh)* toman dos argumentos, ***-a*** y ***-c***. Adicionalmente, se puede especificar una flag: ***-m***
+- ***-a*** : nombre del archivo de Haskell que copiaste y pegaste en la carpeta, incluida su extensión (.hs). 
+- ***-c*** : número de la clase a la cual corresponden los ejercicios. Solo acepta números (int).*
+- ***-m*** es una flag. Si las funciones estan definidas dentro de un módulo (es decir, si al comienzo de tu archivo escribiste *module ModuleName where*), tenes que usarla. Es importante que el nombre del módulo comience con mayúscula (requisito de Haskell) y que el nombre del módulo sea exactamente igual al nombre del archivo.
 
 Ejecutá, reemplazando por el nombre de tu archivo y el número de clase:
 ```
-.\tester.ps1 -archivo archivo.hs -clase n
+.\tester.ps1 -a archivo.hs -c n     # PowerShell - Windows
+```
+```
+.\tester.sh -a archivo.hs -c n      # Bash - Linux
 ```
 O, si tus funciones están definidas dentro de un módulo:
 ```
-.\tester.ps1 -archivo archivo.hs -clase n -m
-````
+.\tester.ps1 -a archivo.hs -c n -m     # PowerShell - Windows
+```
+```
+.\tester.sh -a archivo.hs -c n -m      # Bash - Linux
+```
