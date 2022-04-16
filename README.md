@@ -22,7 +22,7 @@ rm -r img
 
 - Abrí la terminal y navegá a *taller-algebra*. Si usas Windows, usa **PowerShell**.
 
-**Tester** *(tanto tester.ps1 como tester.sh)* toman dos argumentos, ***-a*** y ***-c***. Adicionalmente, se puede especificar una flag: ***-m***
+**Tester** toma dos argumentos, ***-a*** y ***-c***. Adicionalmente, se puede especificar una flag: ***-m***
 - ***-a*** : nombre del archivo de Haskell que copiaste y pegaste en la carpeta, incluida su extensión (.hs). 
 - ***-c*** : número de la clase a la cual corresponden los ejercicios. Solo acepta números (int).*
 - ***-m*** es una flag. Si las funciones estan definidas dentro de un módulo (es decir, si al comienzo de tu archivo escribiste *module ModuleName where*), tenes que usarla. Es importante que el nombre del módulo comience con mayúscula (requisito de Haskell) y que el nombre del módulo sea exactamente igual al nombre del archivo.
