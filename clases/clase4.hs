@@ -103,7 +103,7 @@ module Clase4 where
     f6' q n m = if n==0 then 0 else fix (\f q n m -> if n==m then q^n else q^m + f q n (m-1)) q (n+1) (n+m) + f6' q (n-1) m
 
     -- f6 como f2 desde n hasta n+m (f2 a n+m - f2 a n)
-    f6' :: Integral a => a -> a -> a -> a
+    f6'' :: Integral a => a -> a -> a -> a
     f6'' q n m = if n==0 then 0 else f2 (n+m) q - f2 n q + f6'' q (n-1) m
 
     f7' :: (Eq a, Enum a, Fractional a) => a -> a -> a
