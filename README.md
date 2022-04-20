@@ -43,9 +43,7 @@ O, si tus funciones están definidas dentro de un módulo:
 ```
 
 ### ¿Como lo uso? (trabajos prácticos) ###
-```
-Recordá que lo único que hace Tester es verificar que las funciones den el output esperado para los inputs dados como ejemplo en el enunciado del trabajo práctico. Esto no implica que las funciones esten necesariamente bien. Tester solo ahorra el trabajo manual de verificar todos los ejemplos uno por uno. 
-```
+`Recordá que lo único que hace Tester es verificar que las funciones den el output esperado para los inputs dados como ejemplo en el enunciado del trabajo práctico. Esto no implica que las funciones esten necesariamente bien. Tester solo ahorra el trabajo manual de verificar todos los ejemplos uno por uno. `
 
 - Copiá y pegá en la carpeta *(taller-haskell)* el archivo del tp.
 - Renombrá el archivo a *tp1.hs* o *tp2.hs* según corresponda.
@@ -57,9 +55,3 @@ Ejecutá, reemplazando n por 1 o 2 según corresponda:
 ```
 .\tester.sh -t n      # Bash - Linux
 ```
-
-{% note %}
-
-**Note:** Owners and administrators can add outside collaborators to a repository.
-
-{% endnote %}
