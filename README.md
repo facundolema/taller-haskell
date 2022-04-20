@@ -2,7 +2,7 @@
 
 ## Test de funciones ###
 
-**Tester** es un script (no oficial) para verificar la validez de las funciones dadas como tarea en cada clase del taller de Algebra I. Lo unico que hace **Tester** es ejecutar las funciones con diferentes parámetros y verificar si la respuesta es la esperada. **Tester** viene en tres formas distintas, dependiendo la plataforma en la que se quiera utilizar:
+**Tester** es un script (no oficial) para verificar la validez de las funciones dadas como tarea en cada clase del taller de Algebra I. Lo unico que hace **Tester** es ejecutar las funciones con diferentes parámetros y verificar si la respuesta es la esperada. **Tester** viene en dos formas distintas, dependiendo la plataforma en la que se quiera utilizar:
 - **PowerShell** (Windows 7+ | PowerShell Core 6+)
 - **Bash** (Linux, macOS, *nix)
 
@@ -17,7 +17,7 @@ rm -r img
 ```
 *altrernativamente, se puede descargar el archivo ZIP desde GitHub usando el boton verde*
 
-### ¿Como lo uso? ###
+### ¿Como lo uso? (ejecicios de clases) ###
 - Copiá y pegá en la carpeta *(taller-haskell)* el archivo de Haskell que quieras chequear.
 
 - Abrí la terminal y navegá a *taller-algebra*. Si usas Windows, usa **PowerShell**.
@@ -40,4 +40,18 @@ O, si tus funciones están definidas dentro de un módulo:
 ```
 ```
 .\tester.sh -a archivo.hs -c n -m      # Bash - Linux
+```
+
+### ¿Como lo uso? (trabajos prácticos) ###
+` Recordá que lo único que hace Tester es verificar que las funciones den el output esperado para los inputs dados como ejemplo en el enunciado del trabajo práctico. Esto no implica que las funciones esten necesariamente bien. Tester solo ahorra el trabajo manual de verificar todos los ejemplos uno por uno. `
+
+- Copiá y pegá en la carpeta *(taller-haskell)* el archivo del tp.
+- Renombrá el archivo a *tp1.hs* o *tp2.hs* según corresponda.
+
+Ejecutá, reemplazando n por 1 o 2 según corresponda:
+```
+.\tester.ps1 -t n     # PowerShell - Windows
+```
+```
+.\tester.sh -t n      # Bash - Linux
 ```
