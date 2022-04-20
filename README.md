@@ -57,3 +57,9 @@ Ejecutá, reemplazando n por 1 o 2 según corresponda:
 ```
 .\tester.sh -t n      # Bash - Linux
 ```
+
+{% note %}
+
+**Note:** Owners and administrators can add outside collaborators to a repository.
+
+{% endnote %}
