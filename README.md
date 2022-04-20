@@ -12,8 +12,6 @@
 ```
 git clone https://github.com/FacundoLema/taller-haskell.git
 cd taller-haskell
-rm -r clases
-rm -r img
 ```
 *altrernativamente, se puede descargar el archivo ZIP desde GitHub usando el boton verde*
 
