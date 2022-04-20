@@ -12,7 +12,7 @@ module Clase4 where
 
     eAprox :: Integer -> Float
     eAprox 0 = 1
-    eAprox n = (1 / fromIntegral (factorial n)) + eAprox (n-1)
+    eAprox n = 1 / fromIntegral (factorial n) + eAprox (n-1)
 
     e :: Float
     e = eAprox 10
@@ -70,7 +70,9 @@ module Clase4 where
           | mod n 10 == div (mod n 100) 10 = g4a (div n 10)
           | otherwise = False
 
-    {-- one-liners --}
+     --------------------------------------------------------------------------
+                                {- one-liners -}
+     --------------------------------------------------------------------------
 
     sumatoria' :: Integral a => a -> a
     sumatoria' n = if n == 1 then 1 else n + sumatoria' (n-1)

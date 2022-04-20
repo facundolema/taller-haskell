@@ -33,7 +33,9 @@ module Clase3 where
                    | x `mod` 10 == (x `div` 10) `mod` 10 = todosIguales(x `div` 10)
                    | otherwise = False
 
-    {-- one-liners --}
+    --------------------------------------------------------------------------
+                                {- one-liners -}
+    --------------------------------------------------------------------------
 
     fib' :: Integral a => a -> a
     fib' x = if elem x [0,1] then x else fib' (x-1) + fib' (x-2)

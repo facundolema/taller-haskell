@@ -2,7 +2,8 @@
 param ( [Parameter()] [String]$archivo,
         [Parameter()] [Int]$clase,
         [Parameter()] [Switch]$module,
-        [Parameter()] [Switch]$help)
+        [Parameter()] [Switch]$help,
+        [Parameter()] [Switch]$tp1)
 
 $PSDefaultParameterValues['Out-File:Encoding'] = 'utf8'
 $PSDefaultParameterValues['*:Encoding'] = 'utf8'
@@ -12,6 +13,10 @@ function Run {
     ghc --make tmp.hs; .\tmp.exe;
     if ($m) {Remove-Item -Force *.o, *.hi}
     Remove-Item -Force tmp*}
+
+if ($tp1) {Copy-Item "tp1.hs" -destination "tmp.hs"; Get-Content "tp1test.txt" >> tmp.hs; Run}
+
+Read-Host "Presiona cualquier tecla para terminar"
 
 [Console]::OutputEncoding = [Text.UTF8Encoding]::UTF8
 
