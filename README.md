@@ -52,5 +52,8 @@ Ejecutá, reemplazando n por 1 o 2 según corresponda:
 ```
 ./tester.sh -t n      # Bash - Linux
 ```
+```
+chmod +x tester.sh && ./tester.sh -t n      # Bash - macOS
+```
 
 > ⚠️ Recordá que lo único que hace Tester es verificar que las funciones den el output esperado para los inputs dados como ejemplo en el enunciado del trabajo práctico. Esto no implica que las funciones esten necesariamente bien. Tester solo ahorra el trabajo manual de verificar todos los ejemplos uno por uno. ⚠️
