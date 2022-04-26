@@ -49,9 +49,10 @@ Ejecutá, reemplazando n por 1 o 2 según corresponda:
 ```
 .\tester.ps1 -t n     # PowerShell - Windows
 ```
+Si usas Linux o macOS, antes de ejecutar `tester.sh` por primera vez, ejecutá `chmod -x tester.sh`
 ```
 ./tester.sh -t n      # Bash - Linux / macOS
 ```
-⚠ Si usas Linux o macOS, vas a tener que ejecutar `chmod -x tester.sh` por única vez antes de poder ejecutar `.tester -t n`.
+
 
 > ⚠️ Recordá que lo único que hace Tester es verificar que las funciones den el output esperado para los inputs dados como ejemplo en el enunciado del trabajo práctico. Esto no implica que las funciones esten necesariamente bien. Tester solo ahorra el trabajo manual de verificar todos los ejemplos uno por uno. ⚠️
