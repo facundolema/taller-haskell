@@ -30,14 +30,14 @@ Ejecutá, reemplazando por el nombre de tu archivo y el número de clase:
 .\tester.ps1 -a archivo.hs -c n     # PowerShell - Windows
 ```
 ```
-.\tester.sh -a archivo.hs -c n      # Bash - Linux
+./tester.sh -a archivo.hs -c n      # Bash - Linux
 ```
 O, si tus funciones están definidas dentro de un módulo:
 ```
 .\tester.ps1 -a archivo.hs -c n -m     # PowerShell - Windows
 ```
 ```
-.\tester.sh -a archivo.hs -c n -m      # Bash - Linux
+./tester.sh -a archivo.hs -c n -m      # Bash - Linux
 ```
 
 ### ¿Como lo uso? (trabajos prácticos) ###
@@ -50,7 +50,7 @@ Ejecutá, reemplazando n por 1 o 2 según corresponda:
 .\tester.ps1 -t n     # PowerShell - Windows
 ```
 ```
-.\tester.sh -t n      # Bash - Linux
+./tester.sh -t n      # Bash - Linux
 ```
 
 > ⚠️ Recordá que lo único que hace Tester es verificar que las funciones den el output esperado para los inputs dados como ejemplo en el enunciado del trabajo práctico. Esto no implica que las funciones esten necesariamente bien. Tester solo ahorra el trabajo manual de verificar todos los ejemplos uno por uno. ⚠️
