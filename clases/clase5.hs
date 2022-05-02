@@ -28,8 +28,33 @@ module Clase5 where
     nEsimoPrimo :: Integral a => a -> a
     nEsimoPrimo n = primos 2 n 0
 
-    menorFactDesde n = fst $ fromJust $ find (\(x, y) -> y > n) [(x, factorial x) | x <- [1..]]
-    fact n = foldl1 (*) [1..n]
+    menorFactDesde :: Integral a => a -> a
+    menorFactDesde m = mf m 1 where mf m n | m <= fn = fn
+                                           | otherwise = mf m (n+1)
+                                           where fn = factorial n
+    
+    mayorFactHasta :: Integral a => a -> a
+    mayorFactHasta m = mf m m where mf m n | m >= fn = fn
+                                           | otherwise = mf m (n-1)
+                                           where fn = factorial (n-1)
+
+    menorFactDesde' :: Integral a => a -> a
+    menorFactDesde' n = if esFact n then n else menorFactDesde' (n+1)
+
+    mayorFactHasta' :: Integral a => a -> a
+    mayorFactHasta' n = if esFact n then n else mayorFactHasta' (n-1)
+
+    esFact :: Integral a => a -> Bool
+    esFact n = ef n 1 2 where ef n i j | (i*j) < n = ef n (i*j) (j+1)
+                                       | (i*j) == n = True
+                                       | otherwise =  False
+
+    esFibonacci :: Integral a => a -> Bool
+    esFibonacci n = True
+
+    esSumaInicialDePrimos :: Integral a => a -> Bool
+    esSumaInicialDePrimos n = True
+    
     --------------------------------------------------------------------------
                                 {- one-liners -}
     --------------------------------------------------------------------------
@@ -52,9 +77,17 @@ module Clase5 where
     nprimo :: Integral a => a -> a
     nprimo n = if n==1 then 2 else mp (1 + nprimo(n-1)) where mp n = if esPrimo n then n else mp(n+1)
     
+    -- one-liner
+    esFact' :: Integral a => a -> Bool
+    esFact' n = ef n 1 2 where ef n j i = if (i*j)<n then ef n (i*j) (j+1) else (i*j)==n
+
     --------------------------------------------------------------------------
                     {- alternativas con list comprehension -}
     --------------------------------------------------------------------------
+    
+    -- lista factoriales hasta n!
+    factorials :: Integral a => a -> [(a, a)]
+    factorials n = [(x, factorial x) | x <- [1..n]]
 
     -- divisores de n (sin el 1)
     divisores :: Integral a => a -> [a]
@@ -76,6 +109,8 @@ module Clase5 where
     nEsimoPrimo_ :: Integral a => Int -> a
     nEsimoPrimo_ n = [p | p <- [2..], esPrimo_ p] !! (n-1)
 
+    -- similar a mayorFactDesde
+    mfd n = fst $ fromJust $ find (\(x, y) -> y > n) [(x, factorial x) | x <- [1..]]
 
 
 

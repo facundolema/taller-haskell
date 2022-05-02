@@ -1,7 +1,6 @@
 module Class2 where
 
-    import Data.List
-    import Data.Maybe
+    import Data.List (findIndex)
 
     estanRelacionados :: Real a => a -> a -> Bool
     estanRelacionados x y = (x<=3 && y<=3) || (x>3 && x<=7 && y>3 && y<=7) || (x>7 && y>7)
@@ -36,4 +35,4 @@ module Class2 where
 
     -- escalable
     posicPrimerPar'' :: [Int] -> Int
-    posicPrimerPar'' a = case findIndex even a of Just n -> n; Nothing -> -1
+    posicPrimerPar'' a = case findIndex even a of Just n -> n+1; Nothing -> -1

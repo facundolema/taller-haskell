@@ -1,6 +1,7 @@
 module Clase4 where
     
     import Data.Function (fix)
+    import Clase3 (todosIguales)
 
     sumatoria :: Integral a => a -> a
     sumatoria 1 = 1
@@ -62,13 +63,8 @@ module Clase4 where
 
     g4 :: Integral a => a -> a
     g4 n | n < 10 = sumatoria n
-         | g4a n = n + g4 (n-1)
+         | todosIguales n = n + g4 (n-1)
          | otherwise = g4 (n-1)
-
-    g4a :: Integral a => a -> Bool
-    g4a n | n < 10 = True
-          | mod n 10 == div (mod n 100) 10 = g4a (div n 10)
-          | otherwise = False
 
      --------------------------------------------------------------------------
                                 {- one-liners -}

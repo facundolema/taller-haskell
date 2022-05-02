@@ -42,6 +42,10 @@ module Clase1 where
     algunoEs0' _ 0 = True
     algunoEs0' _ _ = False
 
+    -- Verifica si alguno de los dos números es cero
+    algunoEs0'' :: RealFrac a => a -> a -> Bool
+    algunoEs0'' x y = x*y == 0
+
     -- Verifica si ambos números son cero
     ambosSon0 :: RealFrac a => a -> a -> Bool
     ambosSon0 x y = x == 0 && y == 0

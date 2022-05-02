@@ -27,10 +27,10 @@ module Clase3 where
     sumdig x | x < 10 = x
              | otherwise = x `mod` 10 + sumdig(x `div` 10)
 
-    todosIguales :: Integer -> Bool
+    todosIguales :: Integral a => a -> Bool
     todosIguales x | x < 0 = todosIguales (-x)
                    | x < 10 = True
-                   | x `mod` 10 == (x `div` 10) `mod` 10 = todosIguales(x `div` 10)
+                   | mod x 10 == mod (div x 10) 10 = todosIguales(div x 10)
                    | otherwise = False
 
     --------------------------------------------------------------------------
