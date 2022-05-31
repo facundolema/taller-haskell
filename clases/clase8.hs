@@ -65,3 +65,14 @@ module Clase8 where
 
     permutaciones' :: Integral a => Set a -> Set (Set a)
     permutaciones' xs = [[x,y,z] | x <- xs, y <- xs, z <- xs]
+
+    powerset :: (Eq a, Num a) => a -> [[a]]
+    powerset 0 = []
+    powerset n = [n] : powerset (n-1)
+
+    comb n 1 = mapcons 1 (powerset n)
+    comb n k = mapcons k (powerset n) ++ comb n (k-1)
+
+    mapcons :: a -> [[a]] -> [[a]]
+    mapcons _ [] = []
+    mapcons n (x:xs) = (n:x) : mapcons n xs

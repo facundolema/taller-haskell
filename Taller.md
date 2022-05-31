@@ -1,0 +1,29 @@
+# Taller de Algebra #
+
+- [Clase 0: Introduccion](https://cutt.ly/1EdgxcT)
+- [Clase 1: Primeras funciones](https://cutt.ly/uEdgWit)
+- [Clase 2: Primeras funciones II](https://cutt.ly/GEdgYmc)
+- [Clase 3: Recursión](https://cutt.ly/WEdgZ7C)
+- [Clase 4: Sumatorias](https://cutt.ly/LEdgB0x)
+- [Clase 5: Recursión con funciones auxiliares](https://cutt.ly/wEdg32K)
+- Clase 6
+    - [Clase 6.1: Listas en Haskell](https://cutt.ly/KEdhyuf)
+    - [Clase 6.2: Operaciones sobre listas](https://cutt.ly/hEdhfoq)
+    - [Clase 6.3: Cómo trabajar con listas](https://cutt.ly/REdhcec)
+    - [Clase 6.4: Listas en el intérprete](https://cutt.ly/6EdhRzb)
+    - [Clase 6.5: Recursión sobre listas](https://cutt.ly/5EdhO6D)
+- Clase 7
+    - [Clase 7.1: Conjuntos](https://cutt.ly/SEdjrIc)
+    - [Clase 7.2: Conjuntos](https://cutt.ly/9EdjpXF)
+- Clase 8
+    - [Clase 8.1: Combinatoria](https://cutt.ly/rEdjgbU)
+    - [Clase 8.2: Combinatoria](https://cutt.ly/uEdjxM0)
+    - [Clase 8.3: Combinatoria](https://cutt.ly/ZEdjnDt)
+- Clase 9
+    - [Clase 9.1: Enteros](https://cutt.ly/fEdjDoO)
+    - [Clase 9.2: Enteros](https://cutt.ly/EEdjHD7)
+    - [Clase 9.3: Enteros](https://cutt.ly/GEdjLqC)
+    - [Clase 9.4: Enteros](https://cutt.ly/kEdjXUM)
+- [Clase 10: Sistemas lineales de congruencia](https://cutt.ly/LEdjMq3)
+- [Clase 11: Números complejos](https://cutt.ly/iEdj2ec)
+- [Clase 12: Polinomios](https://cutt.ly/fEdj3GM)
